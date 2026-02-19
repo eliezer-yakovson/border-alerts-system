@@ -3,8 +3,8 @@ services:
   producer:
     build: ./producer
     container_name: producer
-    # volumes:
-    #   - ./data:/data
+    volumes:
+      - ./data:/data
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379

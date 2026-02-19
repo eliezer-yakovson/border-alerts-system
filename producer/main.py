@@ -18,5 +18,5 @@ def process_alerts(alerts):
         redis_conn.rpush(queue_name, json.dumps(alert))
 
 if __name__ == '__main__':
-    alerts = load_alerts('border_alerts.json')
+    alerts = load_alerts('/data/border_alerts.json')
     process_alerts(alerts)
