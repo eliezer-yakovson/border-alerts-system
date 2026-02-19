@@ -22,6 +22,18 @@ services:
       - redis
       - mongo
 
+  analytics-api:
+    build: ./analytics-api
+    container_name: analytics-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mongo
+
 
   redis:
     image: redis:latest

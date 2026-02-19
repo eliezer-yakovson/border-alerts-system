@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 def connect_to_redis():
-    return redis.StrictRedis(host='redis', port=6379, db=0, decode_responses=True)
+    return redis.Redis(host='redis', port=6379, db=0, decode_responses=True)
 
 def connect_to_mongo():
     client = pymongo.MongoClient('mongodb://mongo:27017')

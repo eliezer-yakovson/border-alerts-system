@@ -3,7 +3,7 @@ import redis
 from priority_logic import determine_priority
 
 def connect_to_redis():
-    return redis.StrictRedis(host='redis', port=6379, db=0, decode_responses=True)
+    return redis.Redis(host='redis', port=6379, db=0, decode_responses=True)
 
 def load_alerts(file_path):
     with open(file_path, 'r') as file:
