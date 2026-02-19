@@ -1,9 +1,7 @@
 import json
-import redis
 from priority_logic import determine_priority
+from redis_connection import connect_to_redis
 
-def connect_to_redis():
-    return redis.Redis(host='redis', port=6379, db=0, decode_responses=True)
 
 def load_alerts(file_path):
     with open(file_path, 'r') as file:
